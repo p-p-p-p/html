@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <h1>Absolute classes registraton</h1>
+    <p style="color:red">* required field</p>
+    <p style="color:red">* you must agree to them </p>
+    <form action="/index.html" method="get" class="form-example" onsubmit="displayValue(); return false">
+        <div class="form-example">
+            <label for="name">Name: </label>
+            <input style="margin-left:13px" type="text" name="name" id="name" required>
+            <span style="color:red">*</span>
+        </div>
+
+        <div class="form-example">
+            <label for="email">E-email: </label>
+            <input style="margin-left:1px" type="email" name="email" id="email" required>
+            <span style="color:red">*</span>
+        </div>
+
+        <div class="form-example">
+            <label for="time">Time: </label>
+            <input type="time" name="time" id="time" style="margin-left:18px">
+        </div>
+
+        <div class="form-example">
+            <label for="Classes">Classes: </label>
+            <textarea type="Classes" name="Classes" id="Classes" rows="5" cols="40" 
+                style="margin-left:3px"></textarea>
+        </div>
+
+        <label for="gender" id="abc">Gender:</label>
+        <input type="radio" name="gender" value="male" checked> Male
+        <input type="radio" name="gender" value="female"> Female
+        <span style="color:red">*</span>
+        <br>
+
+
+        <label for="subject-select">Select:</label>
+
+        <select name="subject" id="subject-select" style="margin-left:13px">
+            <option value="">Select a topic</option>
+            <option value="android">Android</option>
+            <option value="java">Java</option>
+            <option value="c">C#</option>
+            <option value="database">Data Base</option>
+
+        </select>
+        <br>
+        <label for="agree">Agree:</label>
+        <input type="checkbox" id="agree" name="Agree" value="agree" required>
+
+        <div class="form-example">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <div>
+        <h2>Your given value are as: </h2>
+        <div id="display"></div>
+    </div>
+    <script>
+        function displayValue() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let time = document.getElementById('time').value;
+            let classes = document.getElementById('Classes').value;
+
+            const radioButtons = document.querySelectorAll('input[name="gender"]');
+            let gender;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    gender = radioButton.value;
+                    break;
+                }
+            }
+
+            let x = document.getElementById('display');
+            x.innerHTML = `Your name is ${name} <br> Your email is ${email} <br> Your class time at ${time} <br> Your class info ${classes} <br> your gender is ${gender}`;
+        }   
+    </script>
+</body>
+</html>
