@@ -1,0 +1,24 @@
+<!-- 6. Write a JavaScript function that returns a passed string with letters in alphabetical order. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="str" placeholder="Enter a string">
+        <input type="button" value="Sort" onclick="sort()">
+    </form>
+    <p id="result"></p>
+    <script>
+        function sort(){
+            var str = document.getElementById("str").value;
+            var result = str.split("").sort().join("");
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

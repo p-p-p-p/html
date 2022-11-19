@@ -1,0 +1,33 @@
+<!-- 7. Use recursion to solve the following exercises.
+b) Write a JavaScript program to find the greatest common divisor (gcd) of two positive numbers. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+  <form action="">
+      <input type="text" id="num1" placeholder="Enter a number">
+      <input type="text" id="num2" placeholder="Enter a number">
+      <input type="button" value="GCD" onclick="gcd()">
+    </form>
+    <p id="result"></p>
+    <!-- using recurstion -->
+    <script>
+        function gcdRecursion(a, b) {
+            if (b == 0) {
+                return a;
+            }
+            return gcdRecursion(b, a % b);
+        }
+        function gcd(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var result = gcdRecursion(num1, num2);
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+   
+</body>
+</html>

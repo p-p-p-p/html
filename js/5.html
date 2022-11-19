@@ -1,0 +1,31 @@
+<!-- 5. Write a JavaScript function that generates all combinations of a string. 
+Example string : 'dog'
+Expected Output : d,do,dog,o,og,g -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="str" placeholder="Enter a string">
+        <input type="button" value="Combinations" onclick="combinations()">
+    </form>
+    <p id="result"></p>
+    <script>
+        function combinations(){
+            var str = document.getElementById("str").value;
+            var result = "";
+            for(var i = 0; i < str.length; i++){
+                for(var j = i + 1; j <= str.length; j++){
+                    result += str.slice(i, j) + ", ";
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

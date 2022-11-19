@@ -1,0 +1,29 @@
+<!-- 4. Write a JavaScript function that checks whether a passed string is palindrome or not? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="str" placeholder="Enter a string">
+        <input type="button" value="Check" onclick="check()">
+    </form>
+    <p id="result"></p>
+    <script>
+        function check(){
+            var str = document.getElementById("str").value;
+            var rev = str.split("").reverse().join("");
+            if(str == rev){
+                document.getElementById("result").innerHTML = "Palindrome";
+            }
+            else{
+                document.getElementById("result").innerHTML = "Not Palindrome";
+            }
+        }
+    </script>
+</body>
+</html>

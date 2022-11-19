@@ -1,0 +1,33 @@
+<!-- 7. Use recursion to solve the following exercises.
+a) Write a JavaScript program to calculate the factorial of a number.
+    -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h2> Factorial of a number</h2>
+    <form action="">
+        <input type="text" id="num" placeholder="Enter a number">
+        <input type="button" value="Factorial" onclick="factorial()">
+    </form>
+    <p id="result"></p>
+
+    
+  <!-- using recursion -->
+  <script>
+        function factorialRecursion(n) {
+            if (n == 0) {
+                return 1;
+            }
+            return n * factorialRecursion(n - 1);
+        }
+        function factorial(){
+            var num = document.getElementById("num").value;
+            var result = factorialRecursion(num);
+            document.getElementById("result").innerHTML = result;
+        }
+  </script>
+</body>
+</html>

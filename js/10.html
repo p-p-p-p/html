@@ -1,0 +1,34 @@
+<!-- Write a JavaScript function to check whether an `input` is an array or not. 
+Test Data :
+console.log(is_array('www.hit.in'));
+console.log(is_array([1, 2, 4, 0])); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form   action="">
+        <input type="text" id="input" placeholder="Enter a string">
+        <input type="button" value="Check" onclick="check()">
+    </form>
+    <p id="result"></p>
+    <!-- regular expression to check a string format is a array or not -->
+    <script>
+        function check(){
+            var input = document.getElementById("input").value;
+            var result = input.match(/^[0-9,]+$/);
+            if(result){
+                document.getElementById("result").innerHTML = "It is an array";
+            }else{
+                document.getElementById("result").innerHTML = "It is not an array";
+            }
+        }
+    </script>
+
+</body>
+</html>
