@@ -20,7 +20,7 @@
         }
         else if (($year % 4 ==0) and ($year % 100 != 0))
         {
-            echo "$year Not a Leap Year";
+            echo "$year  a Leap Year";
         }
         else
         {
